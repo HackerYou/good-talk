@@ -1,0 +1,9 @@
+<div data-foreach-message="messages">
+  <strong data-bind="message.author_name"></strong>:
+  <span data-bind="message.body"></span>
+</div>
+
+<form data-formfor-message="newMessage" data-event-submit="sendMessage">
+  Message: <input data-bind="newMessage.body" />
+  <input type="submit" value="Send Message" />
+</form>

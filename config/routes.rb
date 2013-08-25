@@ -1,4 +1,7 @@
 GoodTalk::Application.routes.draw do
+
+  get "(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+
   resources :messages
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,7 +44,7 @@ GoodTalk::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

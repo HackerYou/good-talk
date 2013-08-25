@@ -1,0 +1,33 @@
+== README
+
+## Dependencies
+
+* Depends on Ruby 2
+
+* No system dependencies
+
+## Configuration
+
+Ensure config/database.yml works for you
+
+## Database creation + initialization
+
+  $ rake db:setup
+
+## Running tests
+
+  $ rake test
+
+## Services
+
+None – no job queues, cache servers, search engines, etc. needed.
+
+## Deployment
+
+Left as an exercise to the operator
+
+## License
+
+MIT
+
+Copyright Edward Ocampo-Gooding 2013

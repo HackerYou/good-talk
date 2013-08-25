@@ -9,9 +9,12 @@ class GoodTalk.MainController extends GoodTalk.ApplicationController
     @messages = GoodTalk.Message.get('all')
     @populateNewMessage()
 
+    PrivatePub.subscribe '/messages', (data) ->
+      message = GoodTalk.Message.createFromJSON(data)
+
   sendMessage: (params) ->
     @newMessage.save()
     @populateNewMessage()
 
   populateNewMessage: ->
-    @newMessage = new GoodTalk.Message(author_name: GoodTalk.get('currentUser'))
+    @set('newMessage', new GoodTalk.Message(author_name: GoodTalk.get('currentUser')))

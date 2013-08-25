@@ -8,11 +8,12 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
+    PrivatePub.publish_to '/messages', @message
     respond_with @message
   end
 
   private
-  
+
   def message_params
     params.require(:message).permit(:author_name, :body)
   end
